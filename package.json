@@ -6,11 +6,11 @@
 	"license": "MIT",
 	"exports": {
 		".": "./dist/index.mjs",
-		"./cli": "./dist/cli.mjs",
+		"./cli": "./dist/cli/index.mjs",
 		"./package.json": "./package.json"
 	},
 	"bin": {
-		"pt": "./dist/cli.mjs"
+		"pt": "./dist/cli/index.mjs"
 	},
 	"files": [
 		"dist",
@@ -19,6 +19,8 @@
 	"scripts": {
 		"build": "tsdown",
 		"dev": "tsdown --watch",
+		"dev:cli": "node ./src/cli/index.ts",
+		"cli": "node ./dist/cli/index.mjs",
 		"lint": "run-p -l lint:*",
 		"lint:eslint": "eslint .",
 		"lint:tsc": "tsc --noEmit",
@@ -33,6 +35,8 @@
 		"@commitlint/config-conventional": "^20.5.3",
 		"@commitlint/types": "^20.5.0",
 		"@pajecawav/prettier-config": "^1.0.2",
+		"c12": "4.0.0-beta.4",
+		"citty": "^0.2.2",
 		"defu": "^6.1.7",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.4.0",

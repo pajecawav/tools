@@ -1,7 +1,9 @@
 import defu from "defu";
 import type { Configuration } from "lint-staged";
 
-export const defineLintStagedConfig = (config?: Configuration): Configuration => {
+export type StagedConfig = Configuration;
+
+export const defineLintStagedConfig = (config?: StagedConfig): StagedConfig => {
 	return defu(config, {
 		"*.{js,jsx,ts,tsx,mjs,mts,cjs,cts}": [
 			"prettier --write",

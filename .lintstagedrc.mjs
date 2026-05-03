@@ -1,3 +1,3 @@
-import { defineLintStagedConfig } from "./src/configs/lint-staged/index.ts";
+import { defineLintStagedConfig } from "./src/tools/lint-staged/index.ts";
 
 export default defineLintStagedConfig();

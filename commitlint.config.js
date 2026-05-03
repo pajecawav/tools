@@ -1,3 +1,3 @@
-import { defineCommitlintConfig } from "./src/configs/commitlint/index.ts";
+import { defineCommitlintConfig } from "./src/tools/commitlint/index.ts";
 
 export default defineCommitlintConfig();
