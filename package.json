@@ -1,7 +1,6 @@
 {
 	"name": "@pajecawav/tools",
 	"version": "0.0.1",
-	"private": true,
 	"type": "module",
 	"license": "MIT",
 	"exports": {
