@@ -24,11 +24,23 @@
 		"lint": "run-p -l lint:*",
 		"lint:eslint": "eslint .",
 		"lint:tsc": "tsc -b --noEmit",
-		"lint:format": "prettier . --check",
+		"lint:format": "oxfmt --check",
 		"lint:package": "publint",
-		"format": "prettier . --write",
+		"format": "oxfmt . --write",
 		"prepare": "husky",
 		"prepublishOnly": "npm-run-all -p -l lint:* -s build"
+	},
+	"peerDependencies": {
+		"oxfmt": "^0.47.0",
+		"prettier": "^3.8.3"
+	},
+	"peerDependenciesMeta": {
+		"oxfmt": {
+			"optional": true
+		},
+		"prettier": {
+			"optional": true
+		}
 	},
 	"dependencies": {
 		"@commitlint/config-conventional": "^20.5.3",
@@ -36,11 +48,11 @@
 		"@pajecawav/prettier-config": "^1.0.2",
 		"c12": "4.0.0-beta.4",
 		"citty": "^0.2.2",
+		"consola": "^3.4.2",
 		"defu": "^6.1.7",
 		"execa": "^9.6.1",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.4.0",
-		"prettier": "^3.8.3"
+		"lint-staged": "^16.4.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

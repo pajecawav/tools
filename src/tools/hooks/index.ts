@@ -1,7 +1,7 @@
-import { execa } from "execa";
-import fsp from "node:fs/promises";
 import fs from "node:fs";
+import fsp from "node:fs/promises";
 import path from "node:path";
+import { execa } from "execa";
 
 const DEFAULT_HOOKS = {
 	"pre-commit": "pt staged",

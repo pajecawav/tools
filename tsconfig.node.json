@@ -32,7 +32,7 @@
 	"include": [
 		"src",
 		".lintstagedrc.mjs",
-		"prettier.config.ts",
+		"oxfmt.config.ts",
 		"eslint.config.ts",
 		"tsdown.config.ts"
 	]

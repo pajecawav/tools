@@ -1,7 +1,7 @@
-import { loadConfig } from "#/src/config.js";
 import type { ArgsDef, CommandDef } from "citty";
 import { defineCommand } from "citty";
 import lintStaged from "lint-staged";
+import { loadConfig } from "#/src/config.js";
 
 export const staged: CommandDef<ArgsDef> = defineCommand({
 	meta: {
