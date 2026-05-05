@@ -3,6 +3,7 @@ import { defineCommand } from "citty";
 import { consola } from "consola";
 import { initHooks } from "#/src/tools/hooks/index.js";
 import { initOxfmt } from "#/src/tools/oxfmt/index.js";
+import { initOxlint } from "#/src/tools/oxlint/index.js";
 import { initPrettier } from "#/src/tools/prettier/index.js";
 
 export const init: CommandDef<ArgsDef> = defineCommand({
@@ -25,7 +26,9 @@ export const init: CommandDef<ArgsDef> = defineCommand({
 
 		consola.info(`Initializing ${formatter}...`);
 		const initFormatter = formatter === "oxfmt" ? initOxfmt : initPrettier;
-
 		await initFormatter();
+
+		consola.info("Initializing oxlint...");
+		await initOxlint();
 	},
 });

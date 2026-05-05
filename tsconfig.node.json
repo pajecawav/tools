@@ -33,7 +33,7 @@
 		"src",
 		".lintstagedrc.mjs",
 		"oxfmt.config.ts",
-		"eslint.config.ts",
+		"oxlint.config.ts",
 		"tsdown.config.ts"
 	]
 }

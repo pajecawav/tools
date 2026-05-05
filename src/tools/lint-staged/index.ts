@@ -10,7 +10,7 @@ export const defineLintStagedConfig = (config?: StagedConfig): StagedConfig => {
 	return defu(config, {
 		"*.{js,jsx,ts,tsx,mjs,mts,cjs,cts}": [
 			`${formatter} --write`,
-			() => "eslint .",
+			() => "oxlint .",
 			() => "tsc -b --noEmit",
 		],
 		"*.{json,md,yml,yaml,css}": `${formatter} --write`,
