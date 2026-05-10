@@ -15,6 +15,8 @@ const defaultConfig: OxlintConfig = {
 	plugins: ["unicorn", "typescript", "oxc"],
 	categories: {
 		correctness: "error",
+		suspicious: "warn",
+		perf: "warn",
 	},
 	options: {
 		typeAware: true,

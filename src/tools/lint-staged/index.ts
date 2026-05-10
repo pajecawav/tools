@@ -13,6 +13,6 @@ export const defineLintStagedConfig = (config?: StagedConfig): StagedConfig => {
 			() => "oxlint .",
 			() => "tsc -b --noEmit",
 		],
-		"*.{json,md,yml,yaml,css}": `${formatter} --write`,
+		"*.{json,md,yml,yaml,css,scss,sass}": `${formatter} --write`,
 	});
 };
