@@ -6,12 +6,13 @@ export type StagedConfig = Configuration;
 
 export const defineLintStagedConfig = (config?: StagedConfig): StagedConfig => {
 	const formatter = packageIsInstalled("oxfmt") ? "oxfmt" : "prettier";
+	const tsc = packageIsInstalled("@typescript/native-preview") ? "tsgo" : "tsc";
 
 	return defu(config, {
 		"*.{js,jsx,ts,tsx,mjs,mts,cjs,cts}": [
 			`${formatter} --write`,
 			() => "oxlint .",
-			() => "tsc -b --noEmit",
+			() => `${tsc} -b --noEmit`,
 		],
 		"*.{json,md,yml,yaml,css,scss,sass}": `${formatter} --write`,
 	});

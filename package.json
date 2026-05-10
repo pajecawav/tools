@@ -20,9 +20,9 @@
 		"dev": "tsdown --watch",
 		"dev:cli": "tsx --tsconfig tsconfig.lib.json ./src/cli/index.ts",
 		"cli": "node ./dist/cli/index.mjs",
-		"lint": "run-p -l lint:*",
+		"lint": "cross-env FORCE_COLOR=1 run-p -l lint:*",
 		"lint:oxlint": "oxlint .",
-		"lint:tsc": "tsc -b --noEmit",
+		"lint:tsc": "tsgo -b --noEmit",
 		"lint:format": "oxfmt --check",
 		"lint:package": "publint",
 		"format": "oxfmt . --write",
@@ -59,6 +59,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^25.6.0",
+		"@typescript/native-preview": "7.0.0-dev.20260510.1",
 		"cross-env": "^10.1.0",
 		"npm-run-all2": "^8.0.4",
 		"oxfmt": "^0.47.0",
@@ -66,8 +67,7 @@
 		"oxlint-tsgolint": "^0.22.1",
 		"publint": "^0.3.18",
 		"tsdown": "^0.21.10",
-		"tsx": "^4.21.0",
-		"typescript": "^6.0.3"
+		"tsx": "^4.21.0"
 	},
 	"packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8"
 }

@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import fsp from "node:fs/promises";
 import path from "node:path";
 import { execa } from "execa";
 
@@ -24,7 +23,7 @@ export const initHooks = async (): Promise<void> => {
 		const hookPath = path.join(huskyDir, hook);
 
 		if (!fs.existsSync(hookPath)) {
-			await fsp.writeFile(hookPath, command, { mode: 0o755 });
+			fs.writeFileSync(hookPath, command, { mode: 0o755 });
 		}
 	}
 };

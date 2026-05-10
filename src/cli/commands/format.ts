@@ -1,11 +1,11 @@
 import { createRequire } from "node:module";
 import path from "node:path";
-import type { ArgsDef, CommandDef } from "citty";
+import type { CommandDef } from "citty";
 import { defineCommand } from "citty";
 import { execa } from "execa";
 import { packageIsInstalled } from "#/src/utils.js";
 
-export const format: CommandDef<ArgsDef> = defineCommand({
+export const format: CommandDef = defineCommand({
 	meta: {
 		name: "format",
 		description: "Format all files",

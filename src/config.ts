@@ -1,4 +1,4 @@
-import type { ConfigLayerMeta, ResolvedConfig } from "c12";
+import type { ResolvedConfig } from "c12";
 import { loadConfig as c12LoadConfig } from "c12";
 import type { CommitlintConfig } from "./tools/commitlint/index.js";
 import { defineCommitlintConfig } from "./tools/commitlint/index.js";
@@ -10,7 +10,7 @@ export interface ToolsConfig {
 	commitlint: CommitlintConfig;
 }
 
-export const loadConfig = async (): Promise<ResolvedConfig<ToolsConfig, ConfigLayerMeta>> => {
+export const loadConfig = async (): Promise<ResolvedConfig<ToolsConfig>> => {
 	return c12LoadConfig<ToolsConfig>({
 		name: "tools",
 		defaultConfig: {

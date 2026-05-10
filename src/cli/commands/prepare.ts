@@ -1,8 +1,8 @@
-import type { ArgsDef, CommandDef } from "citty";
+import type { CommandDef } from "citty";
 import { defineCommand } from "citty";
 import { execa } from "execa";
 
-export const prepare: CommandDef<ArgsDef> = defineCommand({
+export const prepare: CommandDef = defineCommand({
 	meta: {
 		name: "prepare",
 	},

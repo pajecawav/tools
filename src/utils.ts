@@ -25,6 +25,7 @@ export const getPackageJson = (): Record<string, unknown> | null => {
 
 	const raw = fs.readFileSync(path.join(root, "package.json"), "utf8");
 
+	// oxlint-disable-next-line typescript/no-unsafe-type-assertion
 	return JSON.parse(raw) as Record<string, unknown>;
 };
 
