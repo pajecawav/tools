@@ -2,7 +2,7 @@ import fs from "node:fs";
 import fsp from "node:fs/promises";
 import path from "node:path";
 import defu from "defu";
-import type { OxlintConfig } from "oxlint";
+import { type OxlintConfig } from "oxlint";
 
 const CONFIG_FILE_NAME = "oxlint.config.ts";
 const CONFIG_TEMPLATE = `
@@ -20,6 +20,14 @@ const defaultConfig: OxlintConfig = {
 	},
 	options: {
 		typeAware: true,
+	},
+	rules: {
+		"no-shadow": "off",
+		"no-underscore-dangle": "off",
+		"typescript/consistent-return": "off",
+		"typescript/no-explicit-any": "off",
+		"typescript/no-unsafe-type-assertion": "off",
+		"unicorn/consistent-function-scoping": "off",
 	},
 };
 
