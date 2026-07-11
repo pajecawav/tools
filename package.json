@@ -22,7 +22,7 @@
 		"cli": "node ./dist/cli/index.mjs",
 		"lint": "cross-env FORCE_COLOR=1 run-p -l lint:*",
 		"lint:oxlint": "oxlint .",
-		"lint:tsc": "tsgo -b --noEmit",
+		"lint:tsc": "tsc -b --noEmit",
 		"lint:format": "oxfmt --check",
 		"lint:package": "publint",
 		"format": "oxfmt . --write",
@@ -30,7 +30,7 @@
 		"prepublishOnly": "npm-run-all -p -l lint:* -s build"
 	},
 	"peerDependencies": {
-		"oxfmt": "~0.54.0",
+		"oxfmt": "^0.54.0",
 		"oxlint": "^1.69.0",
 		"prettier": "^3.8.4"
 	},
@@ -46,8 +46,8 @@
 		}
 	},
 	"dependencies": {
-		"@commitlint/config-conventional": "^21.0.2",
-		"@commitlint/types": "^21.0.1",
+		"@commitlint/config-conventional": "^21.2.0",
+		"@commitlint/types": "^21.2.0",
 		"@pajecawav/prettier-config": "^1.0.2",
 		"c12": "4.0.0-beta.5",
 		"citty": "^0.2.2",
@@ -55,19 +55,19 @@
 		"defu": "^6.1.7",
 		"execa": "^9.6.1",
 		"husky": "^9.1.7",
-		"lint-staged": "^17.0.7"
+		"lint-staged": "^17.0.8"
 	},
 	"devDependencies": {
-		"@types/node": "^25.9.3",
-		"@typescript/native-preview": "7.0.0-dev.20260611.2",
+		"@types/node": "^24.13.3",
 		"cross-env": "^10.1.0",
-		"npm-run-all2": "^9.0.1",
-		"oxfmt": "~0.54.0",
-		"oxlint": "^1.69.0",
-		"oxlint-tsgolint": "^0.23.0",
+		"npm-run-all2": "^9.0.2",
+		"oxfmt": "^0.58.0",
+		"oxlint": "^1.73.0",
+		"oxlint-tsgolint": "^0.24.0",
 		"publint": "^0.3.21",
-		"tsdown": "^0.22.2",
-		"tsx": "^4.22.4"
+		"tsdown": "^0.22.4",
+		"tsx": "^4.23.0",
+		"typescript": "^7.0.2"
 	},
-	"packageManager": "pnpm@11.5.3+sha512.7ac1c919341c213a34dc0d02afb7143c5c26ac26ee8c4782deea821b8ac64d2134a081fd8941dae6e29bbb48f58dfc2b7fbceeccc07cb2f09d219d342a4969ed"
+	"packageManager": "pnpm@11.11.0+sha512.4463f65fd80ed80d69bc1d4bf163ee94f605c7380fc318bb5b2ebe15f8cd12d49c51a4d59e951b401e764d3b6ca751cbf51bc50ed7001a6bcb4935e684c34882"
 }
