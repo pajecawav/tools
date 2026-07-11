@@ -30,9 +30,9 @@
 		"prepublishOnly": "npm-run-all -p -l lint:* -s build"
 	},
 	"peerDependencies": {
-		"oxfmt": "^0.54.0",
-		"oxlint": "^1.69.0",
-		"prettier": "^3.8.4"
+		"oxfmt": "^0.58.0",
+		"oxlint": "^1.73.0",
+		"prettier": "^3.9.4"
 	},
 	"peerDependenciesMeta": {
 		"oxfmt": {
