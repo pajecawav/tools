@@ -31,7 +31,7 @@
 			}
 		},
 		"TypeScript": {
-			"language_servers": ["tsgo", "oxlint", "oxfmt"],
+			"language_servers": ["typescript-ls", "oxlint", "oxfmt"],
 			"formatter": {
 				"language_server": {
 					"name": "oxfmt"
@@ -39,7 +39,7 @@
 			}
 		},
 		"TSX": {
-			"language_servers": ["tsgo", "oxlint", "oxfmt"],
+			"language_servers": ["typescript-ls", "oxlint", "oxfmt"],
 			"formatter": {
 				"language_server": {
 					"name": "oxfmt"
