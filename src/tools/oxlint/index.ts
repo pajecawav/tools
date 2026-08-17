@@ -30,6 +30,7 @@ const defaultConfig: OxlintConfig = {
 		"typescript/no-unsafe-type-assertion": "off",
 		"typescript/no-unnecessary-type-parameters": "off",
 		"unicorn/consistent-function-scoping": "off",
+		curly: "error",
 	},
 };
 
