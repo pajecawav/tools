@@ -1,14 +1,27 @@
 import { createRequire } from "node:module";
 import path from "node:path";
-import type { CommandDef } from "citty";
+import type { ArgsDef, CommandDef } from "citty";
 import { defineCommand } from "citty";
 import { execa } from "execa";
 import { packageIsInstalled } from "#/src/utils.js";
 
-export const format: CommandDef = defineCommand({
+interface FormatArgs extends ArgsDef {
+	check: {
+		type: "boolean";
+		description: string;
+	};
+}
+
+export const format: CommandDef<FormatArgs> = defineCommand<FormatArgs>({
 	meta: {
 		name: "format",
 		description: "Format all files",
+	},
+	args: {
+		check: {
+			type: "boolean",
+			description: "Check formatting without writing files",
+		},
 	},
 	async run({ args }) {
 		const require = createRequire(import.meta.url);
@@ -21,7 +34,8 @@ export const format: CommandDef = defineCommand({
 
 		const files = args._.length ? args._ : ["."];
 
-		const result = await execa(bin, ["--write", ...files], {
+		const result = await execa(bin, [args.check ? "--check" : "--write", ...files], {
+			reject: false,
 			stdout: "inherit",
 			stderr: "inherit",
 		});
