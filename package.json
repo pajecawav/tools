@@ -38,8 +38,8 @@
 		"prepublishOnly": "npm-run-all -p -l lint:* -s build"
 	},
 	"peerDependencies": {
-		"oxfmt": "^0.63.0",
-		"oxlint": "^1.78.0",
+		"oxfmt": "^0.67.0",
+		"oxlint": "^1.82.0",
 		"prettier": "^3.9.6"
 	},
 	"peerDependenciesMeta": {
@@ -63,19 +63,19 @@
 		"defu": "^6.1.7",
 		"execa": "^10.0.1",
 		"husky": "^9.1.7",
-		"lint-staged": "^17.5.0"
+		"lint-staged": "^17.5.1"
 	},
 	"devDependencies": {
-		"@types/node": "^26.4.1",
+		"@types/node": "^26.5.1",
 		"cross-env": "^10.1.0",
 		"npm-run-all2": "^9.0.3",
-		"oxfmt": "^0.66.0",
-		"oxlint": "^1.81.0",
+		"oxfmt": "^0.67.0",
+		"oxlint": "^1.82.0",
 		"oxlint-tsgolint": "^7.0.2001",
 		"publint": "^0.3.24",
 		"tsdown": "^0.23.0",
 		"tsx": "^4.23.13",
 		"typescript": "^7.0.2"
 	},
-	"packageManager": "pnpm@12.3.4"
+	"packageManager": "pnpm@12.4.0"
 }
