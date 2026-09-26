@@ -39,8 +39,8 @@
 	},
 	"peerDependencies": {
 		"oxfmt": ">=0.63.0 <1",
-		"oxlint": "^1.78.0",
-		"prettier": "^3.9.6"
+		"oxlint": "^1.85.0",
+		"prettier": "^3.9.9"
 	},
 	"peerDependenciesMeta": {
 		"oxfmt": {
@@ -54,10 +54,10 @@
 		}
 	},
 	"dependencies": {
-		"@commitlint/config-conventional": "^21.2.2",
-		"@commitlint/types": "^21.2.0",
+		"@commitlint/config-conventional": "^21.2.3",
+		"@commitlint/types": "^21.2.3",
 		"@pajecawav/prettier-config": "^1.0.2",
-		"c12": "4.0.0-rc.1",
+		"c12": "4.0.0-rc.2",
 		"citty": "^0.2.2",
 		"consola": "^3.4.2",
 		"defu": "^6.1.7",
@@ -69,13 +69,13 @@
 		"@types/node": "^26.6.2",
 		"cross-env": "^10.1.0",
 		"npm-run-all2": "^9.0.3",
-		"oxfmt": "^0.68.0",
-		"oxlint": "^1.83.0",
+		"oxfmt": "^0.70.0",
+		"oxlint": "^1.85.0",
 		"oxlint-tsgolint": "^7.0.2002",
 		"publint": "^0.3.24",
 		"tsdown": "^0.23.0",
-		"tsx": "^4.23.13",
+		"tsx": "^4.23.15",
 		"typescript": "^7.0.2"
 	},
-	"packageManager": "pnpm@12.3.4"
+	"packageManager": "pnpm@12.6.0"
 }
