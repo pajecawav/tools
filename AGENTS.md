@@ -6,8 +6,8 @@
 
 - `pnpm dev:cli` — run the CLI from source via tsx (no build). `.husky/pre-commit` uses this (`pnpm dev:cli staged`), so hooks work without building.
 - `pnpm build` — tsdown, unbundled (dist mirrors src file-for-file).
-- `pnpm lint` — oxlint + `tsc -b --noEmit` + `oxfmt --check` + publint, in parallel. publint validates `dist/`, so run `pnpm build` first for a meaningful lint:package result. CI order: install → build → lint.
-- `pnpm format` — oxfmt with write.
+- `pnpm lint` — `pt lint` via tsx: oxlint + `tsc -b --noEmit` + format check + publint, in parallel. publint validates `dist/`, so run `pnpm build` first for a meaningful result. CI order: install → build → lint.
+- `pnpm format` — `pt format` via tsx.
 
 There are no tests and no test framework. Verification = build + lint.
 
@@ -17,7 +17,10 @@ There are no tests and no test framework. Verification = build + lint.
 - Root tsconfig is solution-style with two projects: `tsconfig.lib.json` (nodenext, `src/` only) and `tsconfig.node.json` (bundler resolution; covers root config files like `tsdown.config.ts`, `oxlint.config.ts`).
 - Source imports use the `#/*` alias (maps to repo root, e.g. `#/src/utils.js`) and `.js` extensions pointing at `.ts` files (nodenext). tsdown rewrites `#/*` imports to relative paths at build time — don't expect Node to resolve them at runtime.
 - `pt format` picks oxfmt vs prettier based on which is in the _consuming_ project's package.json; oxfmt/oxlint/prettier are optional peerDeps.
-- `src/config.ts` loads `tools.config.ts` (staged/commitlint overrides) via c12.
+- `pt lint` runs oxlint + format check + typecheck (`tsc -b --noEmit` when tsconfig has `references`, else `tsc --noEmit`; override via `lint.typecheck` in `tools.config.ts`) + publint (non-private packages), each step skipped when its tool is absent.
+- `defineOxlintConfig`/`defineOxfmtConfig` auto-append `ignorePatterns` based on the consuming project's deps (nitro, happy-css-modules, tanstack router, vitest); user-provided patterns win.
+- `pt staged --changeset` (or `changesets: true` in `tools.config.ts`) requires a changeset before committing; `pt init ci` generates `.github/workflows/ci.yml` (pnpm/bun).
+- `src/config.ts` loads `tools.config.ts` (staged/commitlint/lint/changesets overrides) via c12.
 
 ## Conventions
 

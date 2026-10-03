@@ -28,19 +28,17 @@
 		"dev": "tsdown --watch",
 		"dev:cli": "tsx --tsconfig tsconfig.lib.json ./src/cli/index.ts",
 		"cli": "node ./dist/cli/index.mjs",
-		"lint": "cross-env FORCE_COLOR=1 run-p -l lint:*",
-		"lint:oxlint": "oxlint .",
-		"lint:tsc": "tsc -b --noEmit",
-		"lint:format": "oxfmt --check",
-		"lint:package": "publint",
-		"format": "oxfmt . --write",
+		"lint": "pnpm dev:cli lint",
+		"format": "pnpm dev:cli format",
 		"prepare": "husky",
-		"prepublishOnly": "npm-run-all -p -l lint:* -s build"
+		"prepublishOnly": "pnpm build && pnpm lint"
 	},
 	"peerDependencies": {
 		"oxfmt": ">=0.63.0 <1",
 		"oxlint": "^1.85.0",
-		"prettier": "^3.9.9"
+		"prettier": "^3.9.9",
+		"publint": ">=0.3 <1",
+		"typescript": ">=5 <8"
 	},
 	"peerDependenciesMeta": {
 		"oxfmt": {
@@ -50,6 +48,12 @@
 			"optional": true
 		},
 		"prettier": {
+			"optional": true
+		},
+		"publint": {
+			"optional": true
+		},
+		"typescript": {
 			"optional": true
 		}
 	},
@@ -67,8 +71,6 @@
 	},
 	"devDependencies": {
 		"@types/node": "^26.6.2",
-		"cross-env": "^10.1.0",
-		"npm-run-all2": "^9.0.3",
 		"oxfmt": "^0.70.0",
 		"oxlint": "^1.85.0",
 		"oxlint-tsgolint": "^7.0.2002",
