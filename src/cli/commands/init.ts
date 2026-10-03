@@ -11,6 +11,9 @@ export const init: CommandDef = defineCommand({
 		name: "init",
 		description: "Initialize tools",
 	},
+	subCommands: {
+		ci: () => import("./init/ci.js").then(mod => mod.initCi),
+	},
 	async run() {
 		const formatter = await consola
 			.prompt("Which formatter would you like to use?", {
