@@ -20,6 +20,8 @@ export interface ToolsConfig {
 	staged: StagedConfig;
 	commitlint: CommitlintConfig;
 	lint: LintConfig;
+	/** Require a changeset on every commit (see `pt staged`). */
+	changesets: boolean;
 }
 
 export const loadConfig = async (): Promise<ResolvedConfig<ToolsConfig>> => {
@@ -29,6 +31,7 @@ export const loadConfig = async (): Promise<ResolvedConfig<ToolsConfig>> => {
 			staged: defineLintStagedConfig(),
 			commitlint: defineCommitlintConfig(),
 			lint: {},
+			changesets: false,
 		},
 	});
 };
