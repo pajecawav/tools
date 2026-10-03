@@ -1,9 +1,8 @@
-import { createRequire } from "node:module";
-import path from "node:path";
 import type { ArgsDef, CommandDef } from "citty";
 import { defineCommand } from "citty";
+import { consola } from "consola";
 import { execa } from "execa";
-import { packageIsInstalled } from "#/src/utils.js";
+import { resolveFormatterBin } from "#/src/cli/run.js";
 
 interface FormatArgs extends ArgsDef {
 	check: {
@@ -24,13 +23,12 @@ export const format: CommandDef<FormatArgs> = defineCommand<FormatArgs>({
 		},
 	},
 	async run({ args }) {
-		const require = createRequire(import.meta.url);
+		const bin = resolveFormatterBin();
 
-		const isOxfmt = packageIsInstalled("oxfmt");
-
-		const bin = isOxfmt
-			? path.join(path.dirname(path.dirname(require.resolve("oxfmt"))), "bin", "oxfmt")
-			: require.resolve("prettier/bin/prettier.cjs");
+		if (!bin) {
+			consola.error("Neither oxfmt nor prettier is installed");
+			process.exit(1);
+		}
 
 		const files = args._.length ? args._ : ["."];
 

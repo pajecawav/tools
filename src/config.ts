@@ -5,9 +5,21 @@ import { defineCommitlintConfig } from "./tools/commitlint/index.js";
 import type { StagedConfig } from "./tools/lint-staged/index.js";
 import { defineLintStagedConfig } from "./tools/lint-staged/index.js";
 
+export interface LintConfig {
+	/**
+	 * Typecheck command. `false` disables the step.
+	 * Defaults to `tsc -b --noEmit` when tsconfig.json has references,
+	 * otherwise `tsc --noEmit`.
+	 */
+	typecheck?: string | false;
+	/** Run publint. Defaults to `true` for publishable (non-private) packages. */
+	publint?: boolean;
+}
+
 export interface ToolsConfig {
 	staged: StagedConfig;
 	commitlint: CommitlintConfig;
+	lint: LintConfig;
 }
 
 export const loadConfig = async (): Promise<ResolvedConfig<ToolsConfig>> => {
@@ -16,6 +28,7 @@ export const loadConfig = async (): Promise<ResolvedConfig<ToolsConfig>> => {
 		defaultConfig: {
 			staged: defineLintStagedConfig(),
 			commitlint: defineCommitlintConfig(),
+			lint: {},
 		},
 	});
 };

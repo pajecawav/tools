@@ -11,6 +11,7 @@ const main = defineCommand({
 	subCommands: {
 		staged: () => import("./commands/staged.js").then(mod => mod.staged),
 		format: () => import("./commands/format.js").then(mod => mod.format),
+		lint: () => import("./commands/lint.js").then(mod => mod.lint),
 		prepare: () => import("./commands/prepare.js").then(mod => mod.prepare),
 		init: () => import("./commands/init.js").then(mod => mod.init),
 	},
