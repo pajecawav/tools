@@ -9,6 +9,9 @@
 - `pnpm lint` — `pt lint` via tsx: oxlint + `tsc -b --noEmit` + format check + publint, in parallel. publint validates `dist/`, so run `pnpm build` first for a meaningful result. CI order: install → build → lint.
 - `pnpm format` — `pt format` via tsx.
 
+- `pnpm changeset` — create a changeset. Every commit that changes `src/` needs a pending changeset (pre-commit runs `pt staged --changeset`; skip with `--no-verify` for version-bump commits and dependency updates).
+- Release: `pnpm changeset:version` (bumps version + CHANGELOG) → commit → push → `pnpm changeset:publish`.
+
 There are no tests and no test framework. Verification = build + lint.
 
 ## Toolchain quirks

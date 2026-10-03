@@ -1,1 +1,1 @@
-pnpm dev:cli staged
+pnpm dev:cli staged --changeset

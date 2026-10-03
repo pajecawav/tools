@@ -30,6 +30,9 @@
 		"cli": "node ./dist/cli/index.mjs",
 		"lint": "pnpm dev:cli lint",
 		"format": "pnpm dev:cli format",
+		"changeset": "changeset",
+		"changeset:version": "changeset version",
+		"changeset:publish": "pnpm build && pnpm lint && changeset publish",
 		"prepare": "husky",
 		"prepublishOnly": "pnpm build && pnpm lint"
 	},
@@ -70,6 +73,7 @@
 		"lint-staged": "^17.5.1"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^3.0.3",
 		"@types/node": "^26.6.2",
 		"oxfmt": "^0.70.0",
 		"oxlint": "^1.85.0",
