@@ -26,7 +26,7 @@ const checkChangeset = async (): Promise<boolean> => {
 		packageManager === "bun"
 			? { file: "bunx", args: ["changeset", "status"] }
 			: packageManager === "pnpm"
-				? { file: "pnpm", args: ["dlx", "changeset", "status"] }
+				? { file: "pnpm", args: ["exec", "changeset", "status"] }
 				: { file: "npx", args: ["changeset", "status"] };
 
 	const result = await execa(changesetCommand.file, changesetCommand.args, {
