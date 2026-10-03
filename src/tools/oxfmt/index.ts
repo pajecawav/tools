@@ -3,6 +3,7 @@ import fsp from "node:fs/promises";
 import path from "node:path";
 import defu from "defu";
 import type { OxfmtConfig } from "oxfmt";
+import { detectIgnorePatterns } from "../../utils.ts";
 
 const CONFIG_FILE_NAME = "oxfmt.config.ts";
 const CONFIG_TEMPLATE = `
@@ -40,7 +41,12 @@ const defaultConfig: OxfmtConfig = {
 };
 
 export const defineOxfmtConfig = (config?: OxfmtConfig): OxfmtConfig => {
-	return defu(config, defaultConfig);
+	const merged = defu(config, defaultConfig);
+
+	return {
+		...merged,
+		ignorePatterns: [...detectIgnorePatterns(), ...(merged.ignorePatterns ?? [])],
+	};
 };
 
 export const initOxfmt = async (): Promise<void> => {
