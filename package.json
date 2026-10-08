@@ -38,7 +38,7 @@
 	},
 	"peerDependencies": {
 		"oxfmt": ">=0.63.0 <1",
-		"oxlint": "^1.85.0",
+		"oxlint": "^1.87.0",
 		"prettier": "^3.9.9",
 		"publint": ">=0.3 <1",
 		"typescript": ">=5 <8"
@@ -68,20 +68,20 @@
 		"citty": "^0.2.2",
 		"consola": "^3.4.2",
 		"defu": "^6.1.7",
-		"execa": "^10.0.1",
+		"execa": "^10.1.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^17.5.1"
+		"lint-staged": "^17.6.0"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^3.0.3",
-		"@types/node": "^26.6.2",
-		"oxfmt": "^0.70.0",
-		"oxlint": "^1.85.0",
-		"oxlint-tsgolint": "^7.0.2002",
-		"publint": "^0.3.24",
+		"@types/node": "^26.6.4",
+		"oxfmt": "^0.72.0",
+		"oxlint": "^1.87.0",
+		"oxlint-tsgolint": "^7.0.2003",
+		"publint": "^0.3.25",
 		"tsdown": "^0.23.0",
 		"tsx": "^4.23.15",
 		"typescript": "^7.0.2"
 	},
-	"packageManager": "pnpm@12.6.0"
+	"packageManager": "pnpm@12.10.1"
 }
