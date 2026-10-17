@@ -44,7 +44,10 @@ export const lint: CommandDef = defineCommand({
 		const steps: Step[] = [];
 
 		const oxlint = packageIsInstalled("oxlint")
-			? runTask("oxlint", resolvePackageBin("oxlint"), ["."])
+			? runTask("oxlint", resolvePackageBin("oxlint"), [
+					"--no-error-on-unmatched-pattern",
+					".",
+				])
 			: null;
 		steps.push({
 			label: "oxlint",
@@ -53,7 +56,9 @@ export const lint: CommandDef = defineCommand({
 		});
 
 		const formatterBin = resolveFormatterBin();
-		const format = formatterBin ? runTask("format", formatterBin, ["--check", "."]) : null;
+		const format = formatterBin
+			? runTask("format", formatterBin, ["--check", "--no-error-on-unmatched-pattern", "."])
+			: null;
 		steps.push({
 			label: "format",
 			task: format,

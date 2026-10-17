@@ -32,11 +32,15 @@ export const format: CommandDef<FormatArgs> = defineCommand<FormatArgs>({
 
 		const files = args._.length ? args._ : ["."];
 
-		const result = await execa(bin, [args.check ? "--check" : "--write", ...files], {
-			reject: false,
-			stdout: "inherit",
-			stderr: "inherit",
-		});
+		const result = await execa(
+			bin,
+			[args.check ? "--check" : "--write", "--no-error-on-unmatched-pattern", ...files],
+			{
+				reject: false,
+				stdout: "inherit",
+				stderr: "inherit",
+			},
+		);
 
 		process.exit(result.exitCode);
 	},
