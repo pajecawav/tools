@@ -3,3 +3,4 @@ export { defineLintStagedConfig } from "./tools/lint-staged/index.js";
 export { defineOxfmtConfig } from "./tools/oxfmt/index.js";
 export { defineOxlintConfig } from "./tools/oxlint/index.js";
 export { definePrettierConfig } from "./tools/prettier/index.js";
+export { defineConfig } from "./config.js";
