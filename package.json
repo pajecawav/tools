@@ -38,8 +38,8 @@
 	},
 	"peerDependencies": {
 		"oxfmt": ">=0.63.0 <1",
-		"oxlint": "^1.85.0",
-		"prettier": "^3.9.9",
+		"oxlint": "^1.95.0",
+		"prettier": "^3.10.1",
 		"publint": ">=0.3 <1",
 		"typescript": ">=5 <8"
 	},
@@ -70,18 +70,18 @@
 		"defu": "^6.1.7",
 		"execa": "^10.2.1",
 		"husky": "^9.1.7",
-		"lint-staged": "^17.6.0"
+		"lint-staged": "^17.6.2"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^3.0.3",
-		"@types/node": "^26.6.6",
-		"oxfmt": "^0.76.0",
-		"oxlint": "^1.91.0",
-		"oxlint-tsgolint": "^7.0.2005",
+		"@types/node": "^26.6.11",
+		"oxfmt": "^0.80.0",
+		"oxlint": "^1.95.0",
+		"oxlint-tsgolint": "^7.0.2009",
 		"publint": "^0.3.25",
-		"tsdown": "^0.23.5",
+		"tsdown": "^0.23.7",
 		"tsx": "^4.23.15",
 		"typescript": "^7.0.2"
 	},
-	"packageManager": "pnpm@12.6.0"
+	"packageManager": "pnpm@12.23.0"
 }
